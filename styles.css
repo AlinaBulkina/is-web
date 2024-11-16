@@ -3,63 +3,125 @@ body {
     font-family: 'Arial', sans-serif;
     line-height: 1.6;
     color: #333;
-    background-color:#D8D8D8;
+    background-color: #D8D8D8;
     margin: 0;
     padding: 0;
 }
 
-/* Стилизация заголовков */
-h1, h2 {
-    color: #121926;
+.fixed-icon {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    font-size: 50px;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 5px;
+    border-radius: 5px;
+    z-index: 1000;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Container for grid layout */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 10px;
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.grid-item {
+    grid-column: span 12;
+}
+
+.header, .section, .main-heading, .sub-heading {
     text-align: center;
+}
+
+.main-heading, .sub-heading {
+    color: #121926;
     text-transform: uppercase;
     text-shadow: 1px 1px 2px #ccc;
 }
 
-/* Стили для навигации */
-nav {
+/* Navigation styles */
+.nav {
     background-color: #5A0000;
     padding: 10px;
-    text-align: center;
 }
 
-nav li {
+.nav-item {
     display: inline;
     margin-right: 20px;
 }
 
-nav a {
+.nav-link {
     color: white;
     text-decoration: none;
     font-weight: bold;
     padding: 5px 10px;
 }
 
-/* Интервал между секциями */
-section {
-    margin: 20px;
-    padding: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    background-color: #F2F2F2;
+/* Photo & album galleries styles */
+.photo-gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
 }
 
-/* Стилизация текста параграфов */
-p {
+.photo-card {
+    border: 1px solid #590202;
+    padding: 1px;
+    max-width: 100%;
+}
+
+.image {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    margin: 10px;
+}
+
+.paragraph {
     font-size: 1.2em;
     margin-bottom: 15px;
 }
 
-strong {
+.capitalize {
     text-transform: capitalize;
 }
 
-/* Стили для изображений */
-img {
-    border-radius: 10px;
-    margin: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+.emphasis {
+    font-style: italic;
+    color: #590202;
 }
 
+.album-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.album-card {
+    text-align: center;
+    flex: 1 0 45%;
+    max-width: 300px;
+}
 
 .album-title {
     font-size: 1.2em;
@@ -68,11 +130,77 @@ img {
     text-transform: lowercase;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
     letter-spacing: 0.8px;
-    display: block;
 }
 
-/* Подчеркивание и акцентирование элементов */
-em {
-    font-style: italic;
-    color: #590202;
+.center-content {
+    text-align: center;
+    margin: 0 auto;
+}
+
+.responsive-table {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.table-header {
+    background-color: #590202;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    font-weight: bold;
+}
+
+.table-row {
+    padding: 10px;
+    background-color: #f5f5f5;
+}
+
+.table-row:nth-child(odd) {
+    background-color: #eae9e9;
+}
+
+@media (max-width: 768px) {
+
+    .grid-container {
+        grid-template-columns: repeat(6, 1fr);
+    }
+
+    .grid-item {
+        grid-column: span 6;
+    }
+
+    .photo-gallery {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .album-gallery {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .album-card {
+        max-width: 100%;
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .photo-gallery {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .album-gallery {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .album-card {
+        max-width: 100%;
+        margin-bottom: 20px;
+    }
 }

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Покупка билета</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="ticket-page">
+<div class="fixed-icon">
+    &#9774;
+</div>
+
+<main>
+    <h1 class="main-heading">Купить билет на концерт</h1>
+    <form id="ticketForm">
+
+        <label for="city">Выберите город проведения концерта:</label>
+        <select id="city" name="city" required>
+            <option value="Цюрих">7 ноября - Цюрих - HALLE 662</option>
+            <option value="Лондон">13 ноября - Лондон - EVENTIM APOLLO</option>
+            <option value="Париж">17 ноября - Париж - ZENITH PARIS</option>
+            <option value="Дубай">7 января - Дубай - COCA-COLA ARENA</option>
+        </select><br><br>
+
+        <label for="name">Имя:</label>
+        <input type="text" id="name" name="name" required><br><br>
+
+        <label for="email">Электронная почта:</label>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <label for="ticketCount">Количество билетов:</label>
+        <input type="number" id="ticketCount" name="ticketCount" min="1" required><br><br>
+
+        <button type="submit">Купить</button>
+    </form>
+
+    <p id="confirmationMessage" style="display:none;"></p>
+</main>
+
+<footer class="center-content grid-item">
+    <p>&copy; 2077 Официальный сайт Земфиры. Все права защищены.</p>
+    <div id="performanceStats">Загрузка данных...</div>
+</footer>
+
+<script src="script.js"></script>
+
+<script>
+    (function() {
+        window.addEventListener('load', function() {
+            const [navigationEntry] = performance.getEntriesByType('navigation');
+
+            const pageLoadTime = navigationEntry.loadEventEnd - navigationEntry.startTime;
+            const dnsTime = navigationEntry.domainLookupEnd - navigationEntry.domainLookupStart;
+            const connectTime = navigationEntry.connectEnd - navigationEntry.connectStart;
+            const renderTime = navigationEntry.domComplete - navigationEntry.domInteractive;
+
+            const statsText = `Время полной загрузки страницы: ${pageLoadTime} мс. ` +
+                `Время поиска DNS: ${dnsTime} мс. ` +
+                `Время подключения: ${connectTime} мс. ` +
+                `Время рендеринга: ${renderTime} мс.`;
+
+            const footerElement = document.getElementById('performanceStats');
+            footerElement.textContent = statsText;
+        });
+    })();
+</script>
+
+</body>
+</html>

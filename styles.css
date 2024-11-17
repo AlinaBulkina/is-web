@@ -1,4 +1,3 @@
-
 body {
     font-family: 'Arial', sans-serif;
     line-height: 1.6;
@@ -29,7 +28,11 @@ body {
     box-sizing: border-box;
 }
 
-/* Container for grid layout */
+body.ticket-page {
+    background-image: url('images/4.jpg');
+    background-size: cover;
+}
+
 .grid-container {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
@@ -54,7 +57,7 @@ body {
     text-shadow: 1px 1px 2px #ccc;
 }
 
-/* Navigation styles */
+/* Стили навигации */
 .nav {
     background-color: #5A0000;
     padding: 10px;
@@ -72,7 +75,7 @@ body {
     padding: 5px 10px;
 }
 
-/* Photo & album galleries styles */
+/* Стили галерей */
 .photo-gallery {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -163,8 +166,99 @@ body {
     background-color: #eae9e9;
 }
 
-@media (max-width: 768px) {
+.buy-ticket-btn {
+    margin-top: 35px;
+    background-color: #9f0b0b;
+    color: #ececec;
+    border: none;
+    padding: 10px 30px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
 
+.buy-ticket-btn:hover {
+    background-color: #dc0606;
+}
+
+/* Стили для формы покупки билета */
+form {
+    background-color: #ececec;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 1px solid #ececec;
+    box-sizing: border-box;
+    color: #333;
+    background-color: #f8f8f8;
+
+}
+
+form button {
+    display: inline-block;
+    background-color: #9f0b0b;
+    color: #ececec;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 1em;
+}
+
+form button:hover {
+    background-color: #dc0606;
+}
+
+footer {
+    color: #a16d29;
+}
+
+.nav {
+    border-bottom: 2px solid #ccc;
+}
+
+.nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.nav-item {
+    margin: 0 15px;
+}
+
+.nav-link {
+    padding: 10px;
+    transition: background-color 0.3s, color 0.3s, border-radius 0.3s;
+}
+
+.nav-link:hover {
+    background-color: #f1f1f1;
+    color: #000000;
+    border-radius: 5px;
+}
+
+@media (max-width: 768px) {
     .grid-container {
         grid-template-columns: repeat(6, 1fr);
     }
@@ -186,10 +280,20 @@ body {
         max-width: 100%;
         margin-bottom: 20px;
     }
+
+    .nav ul {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+        justify-items: center;
+    }
+
+    .nav-item {
+        margin: 0;
+    }
 }
 
 @media (max-width: 480px) {
-
     .photo-gallery {
         grid-template-columns: repeat(3, 1fr);
     }
@@ -202,5 +306,15 @@ body {
     .album-card {
         max-width: 100%;
         margin-bottom: 20px;
+    }
+    .nav ul {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+        justify-items: center;
+    }
+
+    .nav-item {
+        margin: 0;
     }
 }

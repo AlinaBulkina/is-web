@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Генератор плейлиста Земфиры</title>
+    <!-- Подключаем CSS файл -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="ticket-page">
+
+<main>
+    <h1 class="main-heading">Создать плейлист Земфиры</h1>
+    <form id="playlistForm" class="playlist-form">
+        <label for="mood" class="form-label">Выберите настроение песен:</label>
+        <select id="mood" name="mood" required class="form-select">
+            <option value="веселые">Веселые</option>
+            <option value="грустные">Грустные</option>
+            <option value="спокойные">Спокойные</option>
+            <option value="влюбленные">Влюбленные</option>
+        </select>
+        <br><br>
+        <label for="count" class="form-label">Количество песен:</label>
+        <input type="number" id="count" name="count" min="1" max="5" required class="form-input">
+        <br><br>
+        <button type="submit" class="form-button">Создать плейлист</button>
+    </form>
+    <div id="resultContainer"></div>
+</main>
+
+
+<script src="playlist_script.js"></script>
+</body>
+</html>

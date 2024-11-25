@@ -30,7 +30,11 @@ body {
 
 body.ticket-page {
     background-image: url('images/4.jpg');
-    background-size: cover;
+    background-size: cover;        /* Фоновое изображение покрывает всю область */
+    background-repeat: no-repeat;  /* Отключаем повторение изображения */
+    background-position: center;   /* Центрируем изображение */
+    height: 100vh;                 /* Устанавливаем высоту 100% от высоты окна */
+    margin: 0;                     /* Убираем отступы для полного покрытия */
 }
 
 .grid-container {
@@ -181,6 +185,30 @@ body.ticket-page {
     background-color: #dc0606;
 }
 
+table {
+    width: 50%;
+    margin: 20px auto; /* Центрируем таблицу по горизонтали */
+    border-collapse: collapse;
+    font-size: 15px;
+    text-align: left;
+    border-radius: 8px; /* Закругляем углы таблицы */
+    overflow: hidden;  /* Чтобы углы работали в некоторых браузерах */
+}
+
+th, td {
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+    background-color: #ffffff; /* Устанавливаем белый цвет для всех ячеек */
+}
+
+tr:last-child td {
+    border-bottom: none; /* Убираем нижнюю границу для ячеек последней строки */
+}
+
+th {
+    background-color: #f4f4f4; /* Слегка серый для заголовков */
+}
+
 /* Стили для формы покупки билета */
 form {
     background-color: #ececec;
@@ -193,7 +221,7 @@ form {
 
 form label {
     display: block;
-    margin-bottom: 8px;
+    margin-bottom: 5px;
     font-weight: bold;
 }
 
@@ -291,6 +319,19 @@ footer {
     .nav-item {
         margin: 0;
     }
+    table {
+        width: 90%;
+        margin: 20px auto; /* Центрируем таблицу по горизонтали */
+        border-collapse: collapse;
+        font-size: 15px;
+        text-align: left;
+        border-radius: 8px; /* Закругляем углы таблицы */
+        overflow: hidden;  /* Чтобы углы работали в некоторых браузерах */
+    }
+    /*body.ticket-page {*/
+    /*    background-image: url('images/4.jpg');*/
+    /*    background-size: cover;*/
+    /*}*/
 }
 
 @media (max-width: 480px) {
